@@ -1,0 +1,16 @@
+.CV {
+  margin-top: 20px;
+  width: 1000px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.CV__aside {
+  background-color: #e8eaee;
+  padding: 40px 10px 50px 45px;
+}
+
+.CV__main {
+  padding: 40px 45px 50px 25px;
+}
