@@ -1,0 +1,87 @@
+.Contact {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.Contact__photoContainer {
+  position: relative;
+  height: 200px;
+  border: 1px solid grey;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.Contact__photo {
+  height: 100%;
+}
+
+.Contact__photoUpload {
+  display: none;
+  position: absolute;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Contact__photoUpload > img {
+  height: 100%;
+}
+
+.Contact__photoContainer:hover .Contact__photoUpload {
+  display: block;
+}
+
+.Contact__info {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.1rem;
+}
+
+.Contact__entry {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.Contact__entry > img {
+  height: 24px;
+}
+
+.Contact__editBtn {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.1rem;
+}
+
+.Contact:hover .Contact__editBtn {
+  display: block;
+}
+
+.Contact__form {
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(199, 199, 199);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.Contact__form > input {
+  height: 30px;
+  border: none;
+}
+
+.Contact__form > button {
+  margin-top: 20px;
+}

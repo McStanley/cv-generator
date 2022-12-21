@@ -3,6 +3,7 @@ import '../styles/CV.css';
 import PersonalInfo from './PersonalInfo';
 import Education from './Education';
 import Skills from './Skills';
+import Contact from './Contact';
 
 class CV extends Component {
   render() {
@@ -13,7 +14,9 @@ class CV extends Component {
           <Education />
           <Skills />
         </aside>
-        <main className="CV__main"></main>
+        <main className="CV__main">
+          <Contact />
+        </main>
       </div>
     );
   }
