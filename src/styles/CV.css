@@ -8,9 +8,17 @@
 
 .CV__aside {
   background-color: #e8eaee;
-  padding: 40px 10px 50px 45px;
+  padding: 40px 40px 50px 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .CV__main {
   padding: 40px 45px 50px 25px;
+}
+
+.line {
+  width: 40px;
+  border-bottom: 2px solid black;
 }

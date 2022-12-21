@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/CV.css';
 import PersonalInfo from './PersonalInfo';
+import Education from './Education';
 
 class CV extends Component {
   render() {
@@ -8,6 +9,7 @@ class CV extends Component {
       <div className="CV">
         <aside className="CV__aside">
           <PersonalInfo />
+          <Education />
         </aside>
         <main className="CV__main"></main>
       </div>
