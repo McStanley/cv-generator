@@ -34,10 +34,12 @@
 }
 
 .Contact__info {
+  min-height: 200px;
   position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 10px;
   font-size: 1.1rem;
 }
@@ -61,7 +63,7 @@
   font-size: 1.1rem;
 }
 
-.Contact:hover .Contact__editBtn {
+.Contact__info:hover .Contact__editBtn {
   display: block;
 }
 
