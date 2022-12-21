@@ -1,0 +1,77 @@
+.Skills {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.Skills__header {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+}
+
+.Skills__addBtn {
+  display: none;
+  font-size: 1.1rem;
+}
+
+.Skills__header:hover .Skills__addBtn {
+  display: block;
+}
+
+.Skills__list {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Skills__entry {
+  position: relative;
+}
+
+.Skills__entry:hover {
+  outline: 1px dotted grey;
+}
+
+.Skills__entryBtns {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(25%, -50%);
+  flex-direction: column;
+  gap: 5px;
+}
+
+.Skills__entry:hover .Skills__entryBtns {
+  display: flex;
+  z-index: 100;
+}
+
+.Skills__entryBtns > button {
+  font-size: 1.1rem;
+}
+
+.Skills__form {
+  width: 350px;
+  padding: 20px;
+  position: fixed;
+  background-color: rgb(199, 199, 199);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.Skills__form > input {
+  height: 30px;
+  border: none;
+}
+
+.Skills__form > button {
+  margin-top: 20px;
+}

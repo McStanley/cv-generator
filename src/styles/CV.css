@@ -1,5 +1,5 @@
 .CV {
-  margin-top: 20px;
+  margin: 20px;
   width: 1000px;
   background-color: white;
   display: grid;
@@ -11,7 +11,7 @@
   padding: 40px 40px 50px 45px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 40px;
 }
 
 .CV__main {
