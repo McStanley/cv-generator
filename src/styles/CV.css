@@ -16,9 +16,19 @@
 
 .CV__main {
   padding: 40px 45px 50px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .line {
   width: 40px;
   border-bottom: 2px solid black;
+}
+
+.line--long {
+  position: relative;
+  width: 120px;
+  border-bottom: 2px solid black;
+  left: -25px;
 }

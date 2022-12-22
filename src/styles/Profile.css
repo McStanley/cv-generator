@@ -1,0 +1,42 @@
+.Profile {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.Profile__header {
+  display: flex;
+  gap: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+}
+
+.Profile__editBtn {
+  display: none;
+  font-size: 1.1rem;
+}
+
+.Profile__header:hover .Profile__editBtn {
+  display: block;
+}
+
+.Profile__form {
+  width: 350px;
+  padding: 20px;
+  position: fixed;
+  background-color: rgb(199, 199, 199);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.Profile__form textarea {
+  height: 100px;
+}
+
+.Profile__form > button {
+  margin-top: 20px;
+}
