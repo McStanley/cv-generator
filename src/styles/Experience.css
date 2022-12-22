@@ -1,0 +1,78 @@
+.Experience {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.Experience__header {
+  display: flex;
+  gap: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+}
+
+.Experience__addBtn {
+  display: none;
+  font-size: 1.1rem;
+}
+
+.Experience__header:hover .Experience__addBtn {
+  display: block;
+}
+
+.Experience__entry {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Experience__entryBtns {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  gap: 5px;
+}
+
+.Experience__entry:hover .Experience__entryBtns {
+  display: flex;
+}
+
+.Experience__entryBtns > button {
+  font-size: 1.1rem;
+}
+
+.Experience__entryRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Experience__form {
+  width: 350px;
+  padding: 20px;
+  position: fixed;
+  background-color: rgb(199, 199, 199);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 100;
+}
+
+.Experience__form > input {
+  height: 30px;
+  border: none;
+}
+
+.Experience__form textarea {
+  height: 100px;
+}
+
+.Experience__form > button {
+  margin-top: 20px;
+}
