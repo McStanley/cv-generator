@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cv-generator/static/css/main.deebfb9d.css",
+    "main.js": "/cv-generator/static/js/main.178a9a32.js",
+    "static/media/avatar.png": "/cv-generator/static/media/avatar.9620d6be978316794661.png",
+    "static/media/upload.png": "/cv-generator/static/media/upload.33dd3b232e3dbc3db4d6.png",
+    "index.html": "/cv-generator/index.html",
+    "main.deebfb9d.css.map": "/cv-generator/static/css/main.deebfb9d.css.map",
+    "main.178a9a32.js.map": "/cv-generator/static/js/main.178a9a32.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.deebfb9d.css",
+    "static/js/main.178a9a32.js"
+  ]
+}
