@@ -28,52 +28,56 @@ class PersonalInfo extends Component {
   render() {
     const { fullName, profession, location, editMode } = this.state;
 
+    const editBtn = (
+      <button className="PersonalInfo__editBtn" onClick={this.toggleEditMode}>
+        Edit
+      </button>
+    );
+
+    const form = (
+      <form className="PersonalInfo__form">
+        <h2>Personal Info</h2>
+        <label htmlFor="fullName">Full Name</label>
+        <input
+          name="fullName"
+          id="fullName"
+          type="text"
+          placeholder="Full Name"
+          value={fullName}
+          onChange={this.handleChange}
+        />
+        <label htmlFor="profession">Profession</label>
+        <input
+          name="profession"
+          id="profession"
+          type="text"
+          placeholder="Profession"
+          value={profession}
+          onChange={this.handleChange}
+        />
+        <label htmlFor="location">Location</label>
+        <input
+          name="location"
+          id="location"
+          type="text"
+          placeholder="Location"
+          value={location}
+          onChange={this.handleChange}
+        />
+        <button onClick={this.toggleEditMode}>Close</button>
+      </form>
+    );
+
     return (
-      <div className="PersonalInfo">
-        <h1 className="PersonalInfo__fullName">{fullName}</h1>
-        <p className="PersonalInfo__profession">{profession}</p>
-        <p className="PersonalInfo__location">{location}</p>
-        {editMode ? (
-          <form className="PersonalInfo__form">
-            <h2>Personal Info</h2>
-            <label htmlFor="fullName">Full Name</label>
-            <input
-              name="fullName"
-              id="fullName"
-              type="text"
-              placeholder="Full Name"
-              value={fullName}
-              onChange={this.handleChange}
-            />
-            <label htmlFor="profession">Profession</label>
-            <input
-              name="profession"
-              id="profession"
-              type="text"
-              placeholder="Profession"
-              value={profession}
-              onChange={this.handleChange}
-            />
-            <label htmlFor="location">Location</label>
-            <input
-              name="location"
-              id="location"
-              type="text"
-              placeholder="Location"
-              value={location}
-              onChange={this.handleChange}
-            />
-            <button onClick={this.toggleEditMode}>Close</button>
-          </form>
-        ) : (
-          <button
-            className="PersonalInfo__editBtn"
-            onClick={this.toggleEditMode}
-          >
-            Edit
-          </button>
-        )}
-      </div>
+      <React.Fragment>
+        <div className="PersonalInfo">
+          <h1 className="PersonalInfo__fullName">{fullName}</h1>
+          <p className="PersonalInfo__profession">{profession}</p>
+          <p className="PersonalInfo__location">{location}</p>
+          {!editMode && editBtn}
+        </div>
+        {editMode && <div className="CV__overlay">{form}</div>}
+      </React.Fragment>
     );
   }
 }

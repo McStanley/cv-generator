@@ -1,4 +1,5 @@
 .CV {
+  position: relative;
   margin: 20px;
   width: 1000px;
   background-color: white;
@@ -31,4 +32,14 @@
   width: 120px;
   border-bottom: 2px solid black;
   left: -25px;
+}
+
+.CV__overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
 }

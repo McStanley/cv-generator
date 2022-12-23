@@ -38,15 +38,17 @@ class Profile extends Component {
     );
 
     return (
-      <div className="Profile">
-        <div className="Profile__header">
-          <h2>Profile</h2>
-          {!editMode && editBtn}
+      <React.Fragment>
+        <div className="Profile">
+          <div className="Profile__header">
+            <h2>Profile</h2>
+            {!editMode && editBtn}
+          </div>
+          <div className="line--long" />
+          <p>{text}</p>
         </div>
-        <div className="line--long" />
-        <p>{text}</p>
-        {editMode && form}
-      </div>
+        {editMode && <div className="CV__overlay">{form}</div>}
+      </React.Fragment>
     );
   }
 }

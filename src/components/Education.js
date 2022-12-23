@@ -76,73 +76,75 @@ class Education extends Component {
 
   render() {
     const educationElements = this.state.education.map((entry) => {
-      return (
-        <div className="Education__entry" key={entry.id}>
-          <h3>{entry.course}</h3>
-          <p>{entry.university}</p>
-          <p>
-            {entry.startYear} – {entry.endYear}
-          </p>
-          <p>{entry.description}</p>
-          {entry.editMode ? (
-            <form className="Education__form">
-              <h2>Education</h2>
-              <label htmlFor="course">Course</label>
-              <input
-                name="course"
-                id="course"
-                type="text"
-                value={entry.course}
-                onChange={(e) => this.handleChange(entry.id, e)}
-              />
-              <label htmlFor="university">University</label>
-              <input
-                name="university"
-                id="university"
-                type="text"
-                value={entry.university}
-                onChange={(e) => this.handleChange(entry.id, e)}
-              />
-              <label htmlFor="startYear">Start Year</label>
-              <input
-                name="startYear"
-                id="startYear"
-                type="number"
-                value={entry.startYear}
-                onChange={(e) => this.handleChange(entry.id, e)}
-              />
-              <label htmlFor="endYear">End Year</label>
-              <input
-                name="endYear"
-                id="endYear"
-                type="number"
-                value={entry.endYear}
-                onChange={(e) => this.handleChange(entry.id, e)}
-              />
-              <label htmlFor="description">Description</label>
-              <textarea
-                name="description"
-                id="description"
-                value={entry.description}
-                onChange={(e) => this.handleChange(entry.id, e)}
-              />
-              <button onClick={() => this.toggleEditMode(entry.id)}>
-                Close
-              </button>
-            </form>
-          ) : (
-            <div className="Education__entryBtns">
-              <button onClick={() => this.toggleEditMode(entry.id)}>
-                Edit
-              </button>
-              <button onClick={() => this.handleRemove(entry.id)}>
-                Remove
-              </button>
-            </div>
-          )}
+      const entryBtns = (
+        <div className="Education__entryBtns">
+          <button onClick={() => this.toggleEditMode(entry.id)}>Edit</button>
+          <button onClick={() => this.handleRemove(entry.id)}>Remove</button>
         </div>
       );
+
+      const form = (
+        <form className="Education__form">
+          <h2>Education</h2>
+          <label htmlFor="course">Course</label>
+          <input
+            name="course"
+            id="course"
+            type="text"
+            value={entry.course}
+            onChange={(e) => this.handleChange(entry.id, e)}
+          />
+          <label htmlFor="university">University</label>
+          <input
+            name="university"
+            id="university"
+            type="text"
+            value={entry.university}
+            onChange={(e) => this.handleChange(entry.id, e)}
+          />
+          <label htmlFor="startYear">Start Year</label>
+          <input
+            name="startYear"
+            id="startYear"
+            type="number"
+            value={entry.startYear}
+            onChange={(e) => this.handleChange(entry.id, e)}
+          />
+          <label htmlFor="endYear">End Year</label>
+          <input
+            name="endYear"
+            id="endYear"
+            type="number"
+            value={entry.endYear}
+            onChange={(e) => this.handleChange(entry.id, e)}
+          />
+          <label htmlFor="description">Description</label>
+          <textarea
+            name="description"
+            id="description"
+            value={entry.description}
+            onChange={(e) => this.handleChange(entry.id, e)}
+          />
+          <button onClick={() => this.toggleEditMode(entry.id)}>Close</button>
+        </form>
+      );
+
+      return (
+        <React.Fragment key={entry.id}>
+          <div className="Education__entry">
+            <h3>{entry.course}</h3>
+            <p>{entry.university}</p>
+            <p>
+              {entry.startYear} – {entry.endYear}
+            </p>
+            <p>{entry.description}</p>
+            {!entry.editMode && entryBtns}
+          </div>
+          {entry.editMode && <div className="CV__overlay">{form}</div>}
+        </React.Fragment>
+      );
     });
+
     return (
       <div className="Education">
         <div className="Education__header">

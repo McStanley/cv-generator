@@ -92,12 +92,12 @@ class Skills extends Component {
       );
 
       return (
-        <React.Fragment>
-          <li className="Skills__entry" key={entry.id}>
+        <React.Fragment key={entry.id}>
+          <li className="Skills__entry">
             {entry.description}
             {!entry.editMode && entryBtns}
           </li>
-          {entry.editMode && form}
+          {entry.editMode && <div className="CV__overlay">{form}</div>}
         </React.Fragment>
       );
     });

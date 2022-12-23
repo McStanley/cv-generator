@@ -154,7 +154,7 @@ class Experience extends Component {
             <p>{entry.description}</p>
             {!entry.editMode && entryBtns}
           </div>
-          {entry.editMode && form}
+          {entry.editMode && <div className="CV__overlay">{form}</div>}
         </React.Fragment>
       );
     });

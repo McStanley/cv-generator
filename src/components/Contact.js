@@ -39,6 +39,12 @@ class Contact extends Component {
     const { image, email, phone, linkedIn, editMode } = this.state;
     const imageUrl = image ? URL.createObjectURL(image) : AvatarImg;
 
+    const editBtn = (
+      <button className="Contact__editBtn" onClick={this.toggleEditMode}>
+        Edit
+      </button>
+    );
+
     const form = (
       <form className="Contact__form">
         <h2>Contact Info</h2>
@@ -107,13 +113,9 @@ class Contact extends Component {
               <p>www.linkedin.com/in/{linkedIn}</p>
             </div>
           )}
-          {!editMode && (
-            <button className="Contact__editBtn" onClick={this.toggleEditMode}>
-              Edit
-            </button>
-          )}
+          {!editMode && editBtn}
         </div>
-        {editMode && form}
+        {editMode && <div className="CV__overlay">{form}</div>}
       </div>
     );
   }
