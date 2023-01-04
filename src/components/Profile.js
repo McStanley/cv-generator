@@ -1,56 +1,47 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import '../styles/Profile.css';
 
-class Profile extends Component {
-  constructor() {
-    super();
-    this.state = {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus commodo viverra maecenas accumsan lacus. Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper.',
-      editMode: false,
-    };
-  }
+const ProfileF = () => {
+  const [text, setText] = useState(
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus commodo viverra maecenas accumsan lacus. Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper.'
+  );
+  const [editMode, setEditMode] = useState(false);
 
-  toggleEditMode = () => {
-    this.setState((prevState) => ({
-      editMode: !prevState.editMode,
-    }));
+  const toggleEditMode = () => {
+    setEditMode((prevEditMode) => !prevEditMode);
   };
 
-  handleChange = (e) => {
-    this.setState({ text: e.target.value });
+  const handleChange = (e) => {
+    setText(e.target.value);
   };
 
-  render() {
-    const { text, editMode } = this.state;
+  const editBtn = (
+    <button className="Profile__editBtn" onClick={toggleEditMode}>
+      Edit
+    </button>
+  );
 
-    const editBtn = (
-      <button className="Profile__editBtn" onClick={this.toggleEditMode}>
-        Edit
-      </button>
-    );
+  const form = (
+    <form className="Profile__form">
+      <h2>Profile</h2>
+      <textarea value={text} onChange={handleChange} />
+      <button onClick={toggleEditMode}>Close</button>
+    </form>
+  );
 
-    const form = (
-      <form className="Profile__form">
-        <h2>Profile</h2>
-        <textarea value={text} onChange={this.handleChange} />
-        <button onClick={this.toggleEditMode}>Close</button>
-      </form>
-    );
-
-    return (
-      <React.Fragment>
-        <div className="Profile">
-          <div className="Profile__header">
-            <h2>Profile</h2>
-            {!editMode && editBtn}
-          </div>
-          <div className="line--long" />
-          <p>{text}</p>
+  return (
+    <React.Fragment>
+      <div className="Profile">
+        <div className="Profile__header">
+          <h2>Profile</h2>
+          {!editMode && editBtn}
         </div>
-        {editMode && <div className="CV__overlay">{form}</div>}
-      </React.Fragment>
-    );
-  }
-}
+        <div className="line--long" />
+        <p>{text}</p>
+      </div>
+      {editMode && <div className="CV__overlay">{form}</div>}
+    </React.Fragment>
+  );
+};
 
-export default Profile;
+export default ProfileF;

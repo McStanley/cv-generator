@@ -1,120 +1,110 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
 import '../styles/Skills.css';
 
-class Skills extends Component {
-  constructor() {
-    super();
-    this.state = {
-      skills: [
-        {
-          id: nanoid(),
-          description: 'User experience',
-          editMode: false,
-        },
-        {
-          id: nanoid(),
-          description: 'User interface',
-          editMode: false,
-        },
-        {
-          id: nanoid(),
-          description: 'App design',
-          editMode: false,
-        },
-        {
-          id: nanoid(),
-          description: 'Adaptive web design',
-          editMode: false,
-        },
-      ],
-    };
-  }
+const Skills = () => {
+  const [skills, setSkills] = useState([
+    {
+      id: nanoid(),
+      description: 'User experience',
+      editMode: false,
+    },
+    {
+      id: nanoid(),
+      description: 'User interface',
+      editMode: false,
+    },
+    {
+      id: nanoid(),
+      description: 'App design',
+      editMode: false,
+    },
+    {
+      id: nanoid(),
+      description: 'Adaptive web design',
+      editMode: false,
+    },
+  ]);
 
-  toggleEditMode = (id) => {
-    const newSkills = this.state.skills.map((entry) => {
+  const toggleEditMode = (id) => {
+    const newSkills = skills.map((entry) => {
       if (entry.id === id) return { ...entry, editMode: !entry.editMode };
       return entry;
     });
 
-    this.setState({
-      skills: newSkills,
-    });
+    setSkills(newSkills);
   };
 
-  handleAdd = () => {
+  const handleAdd = () => {
     const newEntry = {
       id: nanoid(),
       description: '',
       editMode: true,
     };
 
-    this.setState((prevState) => ({
-      skills: [...prevState.skills, newEntry],
-    }));
+    setSkills((prevSkills) => [...prevSkills, newEntry]);
   };
 
-  handleRemove = (id) => {
-    const newSkills = this.state.skills.filter((entry) => entry.id !== id);
-    this.setState({ skills: newSkills });
+  const handleRemove = (id) => {
+    const newSkills = skills.filter((entry) => entry.id !== id);
+    setSkills(newSkills);
   };
 
-  handleChange = (id, e) => {
+  const handleChange = (id, e) => {
     const { value } = e.target;
-    const newSkills = this.state.skills.map((entry) => {
+    const newSkills = skills.map((entry) => {
       if (entry.id === id) return { ...entry, description: value };
       return entry;
     });
-    this.setState({ skills: newSkills });
+
+    setSkills(newSkills);
   };
 
-  render() {
-    const skillElements = this.state.skills.map((entry) => {
-      const entryBtns = (
-        <div className="Skills__entryBtns">
-          <button onClick={() => this.toggleEditMode(entry.id)}>Edit</button>
-          <button onClick={() => this.handleRemove(entry.id)}>Remove</button>
-        </div>
-      );
-
-      const form = (
-        <form className="Skills__form">
-          <label htmlFor="description">Skill</label>
-          <input
-            name="description"
-            id="description"
-            type="text"
-            value={entry.description}
-            onChange={(e) => this.handleChange(entry.id, e)}
-          />
-          <button onClick={() => this.toggleEditMode(entry.id)}>Close</button>
-        </form>
-      );
-
-      return (
-        <React.Fragment key={entry.id}>
-          <li className="Skills__entry">
-            {entry.description}
-            {!entry.editMode && entryBtns}
-          </li>
-          {entry.editMode && <div className="CV__overlay">{form}</div>}
-        </React.Fragment>
-      );
-    });
-
-    return (
-      <div className="Skills">
-        <div className="Skills__header">
-          <h2>Skills</h2>
-          <button className="Skills__addBtn" onClick={this.handleAdd}>
-            +
-          </button>
-        </div>
-        <div className="line" />
-        <ul className="Skills__list">{skillElements}</ul>
+  const skillElements = skills.map((entry) => {
+    const entryBtns = (
+      <div className="Skills__entryBtns">
+        <button onClick={() => toggleEditMode(entry.id)}>Edit</button>
+        <button onClick={() => handleRemove(entry.id)}>Remove</button>
       </div>
     );
-  }
-}
+
+    const form = (
+      <form className="Skills__form">
+        <label htmlFor="description">Skill</label>
+        <input
+          name="description"
+          id="description"
+          type="text"
+          value={entry.description}
+          onChange={(e) => handleChange(entry.id, e)}
+        />
+        <button onClick={() => toggleEditMode(entry.id)}>Close</button>
+      </form>
+    );
+
+    return (
+      <React.Fragment key={entry.id}>
+        <li className="Skills__entry">
+          {entry.description}
+          {!entry.editMode && entryBtns}
+        </li>
+        {entry.editMode && <div className="CV__overlay">{form}</div>}
+      </React.Fragment>
+    );
+  });
+
+  return (
+    <div className="Skills">
+      <div className="Skills__header">
+        <h2>Skills</h2>
+        <button className="Skills__addBtn" onClick={handleAdd}>
+          +
+        </button>
+      </div>
+      <div className="line" />
+      <ul className="Skills__list">{skillElements}</ul>
+    </div>
+  );
+};
 
 export default Skills;
