@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/Profile.css';
 
-const ProfileF = () => {
+const Profile = () => {
   const [text, setText] = useState(
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus commodo viverra maecenas accumsan lacus. Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper.'
   );
@@ -44,4 +44,4 @@ const ProfileF = () => {
   );
 };
 
-export default ProfileF;
+export default Profile;
