@@ -77,7 +77,7 @@ const Contact = () => {
   return (
     <div className="Contact">
       <div className="Contact__photoContainer">
-        <img className="Contact__photo" src={imageUrl} alt="Avatar" />
+        <img className="Contact__photo" src={imageUrl} alt="Person" />
         <label className="Contact__photoUpload" htmlFor="image-upload-button">
           <input
             id="image-upload-button"
@@ -86,7 +86,8 @@ const Contact = () => {
             onChange={handleImageChange}
             style={{ display: 'none' }}
           />
-          <img src={UploadImg} alt="Person" />
+          {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+          <img src={UploadImg} alt="Upload photo" />
         </label>
       </div>
       <div className="Contact__info">

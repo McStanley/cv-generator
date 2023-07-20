@@ -14,6 +14,8 @@
 
 .Contact__photo {
   height: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
 }
 
 .Contact__photoUpload {
@@ -27,6 +29,10 @@
 
 .Contact__photoUpload > img {
   height: 100%;
+}
+
+.Contact__photoContainer:hover .Contact__photo {
+  filter: blur(2px);
 }
 
 .Contact__photoContainer:hover .Contact__photoUpload {
