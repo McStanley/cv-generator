@@ -5,6 +5,7 @@
   background-color: white;
   display: grid;
   grid-template-columns: 1fr 2fr;
+  overflow-wrap: anywhere;
 }
 
 .CV__aside {

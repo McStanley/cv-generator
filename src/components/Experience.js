@@ -136,7 +136,7 @@ const Experience = () => {
             <p>
               {entry.company}, {entry.country}
             </p>
-            <p>
+            <p className="Experience__entryTimespan">
               {entry.start} – {entry.end}
             </p>
           </div>

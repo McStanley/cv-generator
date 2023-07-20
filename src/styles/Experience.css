@@ -46,8 +46,13 @@
 }
 
 .Experience__entryRow {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 150px;
+  column-gap: 20px;
+}
+
+.Experience__entryTimespan {
+  text-align: end;
 }
 
 .Experience__form {
