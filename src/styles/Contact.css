@@ -16,6 +16,7 @@
   height: 100%;
   aspect-ratio: 1;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .Contact__photoUpload {
@@ -25,6 +26,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: inherit;
+  overflow: hidden;
   cursor: pointer;
 }
 
