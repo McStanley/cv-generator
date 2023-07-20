@@ -13,3 +13,7 @@ input,
 textarea {
   font-family: inherit;
 }
+
+textarea {
+  resize: none;
+}
