@@ -15,14 +15,8 @@ const Profile = () => {
     setText(e.target.value);
   };
 
-  const editBtn = (
-    <button className="Profile__editBtn" onClick={toggleEditMode}>
-      Edit
-    </button>
-  );
-
   const form = (
-    <form className="Profile__form">
+    <form>
       <h2>Profile</h2>
       <textarea value={text} onChange={handleChange} />
       <button onClick={toggleEditMode}>Close</button>
@@ -34,7 +28,9 @@ const Profile = () => {
       <div className="Profile">
         <div className="Profile__header">
           <h2>Profile</h2>
-          {!editMode && editBtn}
+          <button className="Profile__editBtn" onClick={toggleEditMode}>
+            Edit
+          </button>
         </div>
         <div className="line--long" />
         <p>{text}</p>

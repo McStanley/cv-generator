@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import '../styles/Contact.css';
 import AvatarImg from '../assets/avatar.png';
 import UploadImg from '../assets/upload.png';
 import EnvelopeImg from '../assets/envelope.png';
 import PhoneImg from '../assets/phone.png';
 import LinkedInImg from '../assets/linkedin.png';
+import '../styles/Contact.css';
 
 const Contact = () => {
   const [image, setImage] = useState(null);
@@ -41,7 +41,7 @@ const Contact = () => {
   );
 
   const form = (
-    <form className="Contact__form">
+    <form>
       <h2>Contact Info</h2>
       <label htmlFor="email">E-Mail</label>
       <input

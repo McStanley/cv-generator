@@ -73,7 +73,7 @@ const Education = () => {
     );
 
     const form = (
-      <form className="Education__form">
+      <form>
         <h2>Education</h2>
         <label htmlFor="course">Course</label>
         <input

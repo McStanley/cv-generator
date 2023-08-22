@@ -6,18 +6,19 @@
 
 .Experience__header {
   display: flex;
+  align-items: center;
   gap: 20px;
   text-transform: uppercase;
   letter-spacing: 0.25rem;
 }
 
 .Experience__addBtn {
-  display: none;
+  visibility: hidden;
   font-size: 1.1rem;
 }
 
 .Experience__header:hover .Experience__addBtn {
-  display: block;
+  visibility: visible;
 }
 
 .Experience__entry {
@@ -41,10 +42,6 @@
   display: flex;
 }
 
-.Experience__entryBtns > button {
-  font-size: 1.1rem;
-}
-
 .Experience__entryRow {
   display: grid;
   grid-template-columns: auto 150px;
@@ -53,32 +50,4 @@
 
 .Experience__entryTimespan {
   text-align: end;
-}
-
-.Experience__form {
-  width: 350px;
-  padding: 20px;
-  position: fixed;
-  background-color: rgb(199, 199, 199);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  z-index: 100;
-  box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.25);
-}
-
-.Experience__form > input {
-  height: 30px;
-  border: none;
-}
-
-.Experience__form textarea {
-  height: 100px;
-}
-
-.Experience__form > button {
-  margin-top: 20px;
 }

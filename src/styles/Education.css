@@ -12,12 +12,12 @@
 }
 
 .Education__addBtn {
-  display: none;
+  visibility: hidden;
   font-size: 1.1rem;
 }
 
 .Education__header:hover .Education__addBtn {
-  display: block;
+  visibility: visible;
 }
 
 .Education__entry {
@@ -39,35 +39,4 @@
 
 .Education__entry:hover .Education__entryBtns {
   display: flex;
-}
-
-.Education__entryBtns > button {
-  font-size: 1.1rem;
-}
-
-.Education__form {
-  width: 350px;
-  padding: 20px;
-  position: fixed;
-  background-color: rgb(199, 199, 199);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.25);
-}
-
-.Education__form > input {
-  height: 30px;
-  border: none;
-}
-
-.Education__form textarea {
-  height: 100px;
-}
-
-.Education__form > button {
-  margin-top: 20px;
 }

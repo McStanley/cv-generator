@@ -29,7 +29,7 @@ const PersonalInfo = () => {
   );
 
   const form = (
-    <form className="PersonalInfo__form">
+    <form>
       <h2>Personal Info</h2>
       <label htmlFor="fullName">Full Name</label>
       <input

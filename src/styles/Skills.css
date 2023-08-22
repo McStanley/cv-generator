@@ -12,12 +12,12 @@
 }
 
 .Skills__addBtn {
-  display: none;
+  visibility: hidden;
   font-size: 1.1rem;
 }
 
 .Skills__header:hover .Skills__addBtn {
-  display: block;
+  visibility: visible;
 }
 
 .Skills__list {
@@ -32,7 +32,7 @@
 }
 
 .Skills__entry:hover {
-  outline: 1px dotted grey;
+  outline: 1px dotted #6495ed;
 }
 
 .Skills__entryBtns {
@@ -48,31 +48,4 @@
 .Skills__entry:hover .Skills__entryBtns {
   display: flex;
   z-index: 100;
-}
-
-.Skills__entryBtns > button {
-  font-size: 1.1rem;
-}
-
-.Skills__form {
-  width: 350px;
-  padding: 20px;
-  position: fixed;
-  background-color: rgb(199, 199, 199);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.25);
-}
-
-.Skills__form > input {
-  height: 30px;
-  border: none;
-}
-
-.Skills__form > button {
-  margin-top: 20px;
 }

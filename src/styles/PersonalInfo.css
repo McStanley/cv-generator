@@ -19,31 +19,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.1rem;
 }
 
 .PersonalInfo:hover .PersonalInfo__editBtn {
   display: block;
-}
-
-.PersonalInfo__form {
-  padding: 20px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgb(199, 199, 199);
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.25);
-}
-
-.PersonalInfo__form > input {
-  height: 30px;
-  border: none;
-}
-
-.PersonalInfo__form > button {
-  margin-top: 20px;
 }

@@ -76,7 +76,7 @@ const Experience = () => {
     );
 
     const form = (
-      <form className="Experience__form">
+      <form>
         <label htmlFor="position">Job position</label>
         <input
           name="position"

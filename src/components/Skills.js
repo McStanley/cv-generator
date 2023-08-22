@@ -69,7 +69,7 @@ const Skills = () => {
     );
 
     const form = (
-      <form className="Skills__form">
+      <form>
         <label htmlFor="description">Skill</label>
         <input
           name="description"
