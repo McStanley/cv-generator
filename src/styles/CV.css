@@ -1,6 +1,6 @@
 .CV {
+  margin: auto;
   position: relative;
-  margin: 20px;
   width: 1000px;
   background-color: white;
   display: grid;

@@ -6,6 +6,7 @@
 body {
   font-family: 'Inter', sans-serif;
   color: #5c6168;
+  background: #d5dae4;
 }
 
 button,
@@ -37,7 +38,7 @@ button:active {
 form {
   width: 350px;
   padding: 20px;
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
